@@ -12,8 +12,12 @@ const [readingTime, setReadingTime] = useState(0);
     const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks)
   }
-  const handleMarkAsRead = time =>{
+  const handleMarkAsRead = (id, time) =>{
       setReadingTime(readingTime + time);
+      //remove the mark as read from the bookmark
+      // console.log('Remove bookmark',id)
+      const remainingBookMarks = bookmarks.filter(bookmark => bookmark.id !== id);
+      setBookmarks(remainingBookMarks);
   }
 
 

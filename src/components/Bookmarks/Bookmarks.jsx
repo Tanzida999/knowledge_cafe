@@ -12,7 +12,7 @@ function Bookmarks({bookmarks, readingTime}) {
                 <h3 className="text-3xl">Reading Time:{readingTime}</h3>
             </div>
                 <h2 className="text-3xl text-center bg-gray-300">Bookmarked Blog:{bookmarks.length}</h2> {
-                    bookmarks.map(bookmark => <Bookmark key={bookmark.id} bookmark={bookmark}></Bookmark>)
+                    bookmarks.map((bookmark, index) => <Bookmark key={index} bookmark={bookmark}></Bookmark>)
                 }           
         </div>
     );
