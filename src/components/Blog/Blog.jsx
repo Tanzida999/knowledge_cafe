@@ -19,7 +19,7 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
                 <div>
                     <span>{reading_time} min read </span>
                     <button 
-                    onClick={()=>handleAddToBookmark(blog)}
+                        onClick={()=>handleAddToBookmark(blog)}
                         className='ml-2 font-xl'
                     ><FaBookmark></FaBookmark></button>
                 </div>
@@ -27,11 +27,11 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
             <h2 className="text-4xl">{title}</h2>
             <p>
                 {
-                    hashtags.map((hash, index) => <span><a href="">#{hash}</a></span>)
+                    hashtags.map((hash, index) => <span key={index}><a href="">#{hash}</a></span>)
                 }
             </p>
             <button
-                onClick={()=> handleMarkAsRead(reading_time)}
+                onClick={ ()=> handleMarkAsRead(reading_time)}
                 className='text-purple-800 font-bold underline'>Mark as Read</button>
         </div>
     );
